@@ -1,0 +1,13 @@
+public String stringSplosion(String str) {
+  //for loop through all characters of str 0 to n.
+  //print subString(0,i).
+  String sub = "";
+  if(str.length() > 0)
+  {
+  for(int i = 1; i <= str.length(); i++)
+    {
+    sub += (str.substring(0, i));
+    }
+  }
+  return sub;
+}
