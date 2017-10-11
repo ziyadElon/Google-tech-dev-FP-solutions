@@ -1,0 +1,27 @@
+public int sumNumbers(String str) {
+//split using non-digit(s)(D+) as the delimiter.
+  String b[] = str.split("\\D+");
+        int number;
+        int sum = 0;
+       //Have to use two separate cases as in some cases 
+       //an empty string is returned as the first array element by split method
+       if(str.length() > 0 && Character.isDigit((str.charAt(0))))
+        {
+            for(int i = 0; i < b.length; i++)
+            {
+               number = Integer.parseInt(b[i]);
+                //System.out.println(number);
+                sum+=number;
+            }    
+        }
+        else
+        {
+        for(int i = 1; i < b.length; i++)
+        {
+               number = Integer.parseInt(b[i]);
+                //System.out.println(number);
+                sum+=number;
+        }
+        }
+        return sum;
+}
