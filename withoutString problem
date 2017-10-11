@@ -1,0 +1,24 @@
+public String withoutString(String base, String remove) {
+  //find length of: base = lBase, remove = lRem.
+  //create a StringBuilder object with the BASE string as a parameter(to use the delete function).
+  //run a loop while (length of base >= length of remove)
+  int lBase = base.length();
+  int lRem = remove.length();
+  int start = 0;
+  int end = 0;
+  StringBuilder sb = new StringBuilder(base);
+  while(lBase >= lRem)
+  {
+    //start = first index of first occurrence of REMOVE in BASE.
+    //end = start + length of remove
+    //conversion to lower case for both as problem is case insensitive.
+    //conversion inside loop so that the case of returned string is unaltered.
+    start = ((sb.toString()).toLowerCase()).indexOf(remove.toLowerCase());
+    end = start + lRem;
+    if(start == -1)
+      break;
+    sb.delete(start, end);
+    lBase = sb.length();
+  }
+  return (sb.toString());
+}
