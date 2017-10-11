@@ -1,0 +1,28 @@
+public boolean canBalance(int[] nums) {
+  int leftSum = 0;
+  int rightSum = 0;
+  boolean result = false;
+  //last index of left side array is the second last element index
+  int leftLastIndex = nums.length - 1; 
+  for(int i = 0; i < leftLastIndex; i++)
+  {
+    leftSum += nums[i];
+    //now finding sum of the right side of the array
+    for(int j = i+1; j < nums.length; j++)
+    {
+      rightSum += nums[j];
+    }
+    //if condition is true
+      //result is true.
+      //no more iterations needed.
+    if(leftSum == rightSum)
+    {
+      result = true;
+      break;
+    }
+    //right side sum has to be initialized to zero after every iteration of i
+    //So that previous values are cleared
+    rightSum = 0; 
+  }
+  return result;
+}
